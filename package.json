@@ -4,8 +4,8 @@
   "private": true,
   "description": "",
   "scripts": {
-    "start": "node ./bin/www",
-    "build":"npm run build"
+    "start": "node ./bin/www"
+     
   },
   "keywords": [],
   "author": "",
