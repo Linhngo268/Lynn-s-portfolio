@@ -49,7 +49,7 @@ app.post('/send-email', (req, res) => {
             return res.send('Error: ' + error.message);
         }
     
-        res.status(200);
+        res.status(200).json({ message: 'ok' });
         res.redirect('/thankyou.html');
         
          
