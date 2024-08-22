@@ -50,6 +50,8 @@ app.post('/send-email', (req, res) => {
         }
     
         res.status(200);
+        res.redirect('../thankyou.html');
+        
          
     });
 });
