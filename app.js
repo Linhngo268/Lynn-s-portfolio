@@ -3,6 +3,7 @@ const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
+app.set('port', 8080);
 
 // Middleware to parse form data
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -54,9 +55,10 @@ app.post('/send-email', (req, res) => {
 });
  
 
-const PORT = process.env.PORT || 3003;
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+// const PORT = process.env.PORT || 8080;
+// const PORT=8080;
+// app.listen(PORT, () => {
+//     console.log(`Server running on port ${PORT}`);
+// });
 
 module.exports = app;
