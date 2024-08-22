@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 });
 
 // Handle form submission
-app.post('/send-email', (req, res) => {
+app.post('/thankyou.html', (req, res) => {
     const Email= req.body.email;
     const Name = req.body.name;
     const Message = req.body.message;
