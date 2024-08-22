@@ -50,17 +50,11 @@ app.post('/send-email', (req, res) => {
         }
     
         res.status(200);
-        res.redirect('../thankyou.html');
+        res.redirect('/thankyou.html');
         
          
     });
 });
- 
 
-// const PORT = process.env.PORT || 8080;
-// const PORT=8080;
-// app.listen(PORT, () => {
-//     console.log(`Server running on port ${PORT}`);
-// });
 
 module.exports = app;
