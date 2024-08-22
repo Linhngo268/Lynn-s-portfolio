@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 });
 
 // Handle form submission
-app.post('/thankyou.html', (req, res) => {
+app.post('/send-email', (req, res) => {
     const Email= req.body.email;
     const Name = req.body.name;
     const Message = req.body.message;
@@ -49,8 +49,8 @@ app.post('/thankyou.html', (req, res) => {
             return res.send('Error: ' + error.message);
         }
     
-        res.status(200).json({ message: 'ok' });
-        res.redirect('/thankyou.html');
+        res.status(200).json({ message: 'Thank you for your email. I appreciate you taking the time to reach out to me. I will review your message and respond to you as soon as possible.Thank you for your understanding and patience.</p>' });
+         
         
          
     });
