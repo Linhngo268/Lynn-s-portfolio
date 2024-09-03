@@ -1,4 +1,12 @@
 {
-    "rewrites": [{ "source": "/(.*)", "destination": "/public/index.html" }]
+    "rewrites": [
+        { 
+        "source": "/(.*)", 
+    "destination": "/public/index.html" },
+    {
+        "source": "/send-email",
+        "destination": "/"
+    }
+]
 }
    
