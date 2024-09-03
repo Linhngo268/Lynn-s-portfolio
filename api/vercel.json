@@ -1,8 +1,20 @@
+// {
+//     "rewrites": [
+//         { 
+//         "source": "/(.*)", 
+//     "destination": "/public/index.html" },
+//     {
+//         "source": "/send-email",
+//         "destination": "/"
+//     }
+// ]
+// }
+   
 {
-    "rewrites": [
+    "routes": [
         { 
-        "source": "/(.*)", 
-    "destination": "/public/index.html" },
+        "source": "/", 
+    "destination": "/" },
     {
         "source": "/send-email",
         "destination": "/"
