@@ -31,7 +31,7 @@
       },
       {
         "source": "/send-email",
-        "destination": "/api/send-email"
+        "destination": "/index.html/send-email"
       }
     ]
   }
