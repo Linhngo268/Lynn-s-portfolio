@@ -10,15 +10,29 @@
 // ]
 // }
    
+// {
+//     "routes": [
+//         { 
+//         "source": "/", 
+//     "destination": "/" 
+// },
+//     {
+//         "source": "/send-email",
+//         "destination": "/"
+//     }
+// ]
+// }
+   
 {
     "routes": [
-        { 
+      { 
         "source": "/", 
-    "destination": "/" },
-    {
+        "destination": "/index.html" 
+      },
+      {
         "source": "/send-email",
-        "destination": "/"
-    }
-]
-}
-   
+        "destination": "/api/send-email"
+      }
+    ]
+  }
+  
