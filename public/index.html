@@ -320,7 +320,8 @@
                         <input type="email" id="email" name="email" placeholder="Email" class="contact__input">
                         <input type="text" id="name" name="name" placeholder="Name" class="contact__input">
                         <textarea  id="message" name="message" placeholder="Message" cols="0" rows="10" class="contact__input"></textarea>
-                        <input type="submit" value="Send Email" class="contact__button button">
+                         
+                        <a id="sendEmailButton" class="contact__button button" href="#">Send Email</a>
                     </form>
                 </div>
             </section>
@@ -340,78 +341,26 @@
         <script src="/js/main.js"></script>
     </body>
 </html>
-<script>
-    document.getElementById('contactForm').addEventListener('submit', async function(e) {
-        e.preventDefault(); // Prevent the form from submitting the traditional way
-    
-        // Get form values
-        const Email = document.getElementById('email').value;
-        const Name = document.getElementById('name').value;
-        const Message = document.getElementById('message').value;
-    
-        // Send the data using fetch (AJAX)
-        try {
-            const response = await fetch('/send-email', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    email: Email,
-                    name: Name,
-                    message: Message
-                }),
-            });
-    
-            const result = await response.json();
-            if (response.ok) {
-                alert('Email sent successfully!');
-                document.getElementById('contactForm').reset(); // Optionally reset the form after submission
-            } else {
-                alert('Failed to send email: ' + result.error);
-            }
-        } catch (error) {
-            alert('An error occurred while sending the email.');
-            console.error(error);
-        }
-    });
-    </script>
-    
-<!-- <script>
-   document.getElementById('contactForm').addEventListener('submit', function(event) {
-    
-     const Email=document.getElementById('email').innerText;
-
-    // Get the recipient's name from the form input
-    const name = document.getElementById('name').value;
-
-     
-    fetch('thankyou.html')
-        .then(response => response.text())
-        .then(template => {
-            document.body.innerHTML = template; // Load the template into the body or a specific section
-            const greetingElement = document.getElementById('greeting');
-            const updatedTemplate = template.replace('[Name]', name);
-
-            if (greetingElement) {
-                greetingElement.innerHTML = updatedTemplate;
-            } else {
-                console.error('Element with id "greeting" not found.');
-            }
-
-             
-            document.getElementById('contactForm').submit();
-        })
-        
-        .catch(error => {
-            console.error('Error loading thank you template:', error);
-        });
-
-
-});
-
  
 
-</script>
-
- -->
+     <script>
+        document.getElementById('sendEmailButton').addEventListener('click', function(e) {
+            // Prevent the default anchor action
+            e.preventDefault();
+            
+            // Get form values
+            const email = document.getElementById('email').value;
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
+    
+            // Build the mailto link
+            const mailtoLink = `mailto:lynnngo2608@gmail.com?subject=Message%20from%20${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AFrom:%20${encodeURIComponent(email)}`;
+    
+            // Set the href attribute of the anchor to the mailto link
+            window.location.href= mailtoLink;
+              
+    
+            // Now allow the default action (which will open the user's email client)
+        });
+    </script>
+ 
