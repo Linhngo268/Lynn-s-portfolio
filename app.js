@@ -18,9 +18,9 @@ app.get('/', (req, res) => {
 
 // Handle form submission
 app.post('/send-email', (req, res) => {
-    const Email= req.body.email;
-    const Name = req.body.name;
-    const Message = req.body.message;
+    const email= req.body.email;
+    const name = req.body.name;
+    const message = req.body.message;
    
 
 
@@ -36,11 +36,11 @@ app.post('/send-email', (req, res) => {
 
     // Setup email data
     const mailOptions = {
-        from:Email, // Sender address
+        from:email, // Sender address
         to: 'lynnngo2608@gmail.com', // List of receivers
-        subject: `Message from ${Name} (${Email})`, // Subject line
-        text: Message, // Plain text body
-        replyTo: Email,
+        subject: `Message from ${name} (${email})`, // Subject line
+        text: message, // Plain text body
+        replyTo: email,
     };
 
     // Send email
@@ -50,7 +50,7 @@ app.post('/send-email', (req, res) => {
         }
     
         res.status(200).json({ message: 'Thank you for your email. I appreciate you taking the time to reach out to me. I will review your message and respond to you as soon as possible.Thank you for your understanding and patience.</p>' });
-        res.redirect('/thankyou.html');
+         
         
          
     });

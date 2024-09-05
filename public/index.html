@@ -315,7 +315,7 @@
             <section class="contact section" id="contact">
                 <h2 class="section-title">Contact</h2>
 
-                <div class="contact__container bd-grid">
+                <div class="contact__container bd-grid" >
                     <form action="/send-email" method="POST" class="contact__form" id="contactForm">
                         <input type="email" id="email" name="email" placeholder="Email" class="contact__input">
                         <input type="text" id="name" name="name" placeholder="Name" class="contact__input">
@@ -340,6 +340,43 @@
         <script src="/js/main.js"></script>
     </body>
 </html>
+<script>
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+        e.preventDefault(); // Prevent the form from submitting the traditional way
+    
+        // Get form values
+        const Email = document.getElementById('email').value;
+        const Name = document.getElementById('name').value;
+        const Message = document.getElementById('message').value;
+    
+        // Send the data using fetch (AJAX)
+        try {
+            const response = await fetch('/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: Email,
+                    name: Name,
+                    message: Message
+                }),
+            });
+    
+            const result = await response.json();
+            if (response.ok) {
+                alert('Email sent successfully!');
+                document.getElementById('contactForm').reset(); // Optionally reset the form after submission
+            } else {
+                alert('Failed to send email: ' + result.error);
+            }
+        } catch (error) {
+            alert('An error occurred while sending the email.');
+            console.error(error);
+        }
+    });
+    </script>
+    
 <!-- <script>
    document.getElementById('contactForm').addEventListener('submit', function(event) {
     
