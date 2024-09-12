@@ -387,8 +387,8 @@ img {
   border-radius: 1rem;
   overflow: hidden;
   align-items: center; /* Center items horizontally */
-  margin-left: 10px;
-  padding-left: 100px;
+  /* margin-left: 10px; */
+  /* padding-left: 100px; */
 }
 .work__img img {
   transition: 1s;
