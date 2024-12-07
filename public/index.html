@@ -50,6 +50,7 @@
                     <a id="nav-menu" href="#contact" class="button">Contact</a>
                     <a href="/resume/RESUME-LYNNNGO.docx" download="RESUME-LYNNNGO.docx" class="button">Download Resume</a>
                 <a class="button" onclick="toggleBackgroundColor()">Change Background</a>
+                <a href="thankyou.html" class="button">Go to New Page </a>
 
 
                 </div>
@@ -428,11 +429,11 @@
             const message = document.getElementById('message').value;
     
             // Build the mailto link
-            const mailtoLink = `mailto:lynnngo2608@gmail.com?subject=Message%20from%20${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AFrom:%20${encodeURIComponent(email)}`;
-    
-            // Set the href attribute of the anchor to the mailto link
-            window.location.href= mailtoLink;
-              
+            const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=mailtolynnngo2608@gmail.com&su=${encodeURIComponent("Message from " + name)}&body=${encodeURIComponent(message + "\n\nFrom: " + email)}`;
+
+    // Open the Gmail compose window in a new tab
+    window.open(gmailLink, '_blank');
+            
     
             // Now allow the default action (which will open the user's email client)
         });

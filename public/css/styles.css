@@ -321,7 +321,7 @@ img {
     flex-direction: row;
 }
 .button:hover {
-  box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 5px 8px rgb(244 62 123 / 51%);
 }
 
 /* ===== ABOUT =====*/
@@ -378,7 +378,7 @@ img {
   padding: 0.15rem 0.25rem;
   margin-bottom: var(--mb-4);
   border-radius: 0.5rem;
-  box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
+  box-shadow: 0px 1px 4px rgb(244 62 123 / 51%);
   margin-left: var(--mb-8);
 }
 
@@ -424,7 +424,7 @@ img {
   
 }
 .education__img {
-  box-shadow: 0px 4px 25px rgba(154, 80, 126, 0.15);
+  box-shadow: 0px 4px 25px rgb(244 62 123 / 51%);
   border-radius: 0.5rem;
   overflow: hidden;
   align-items: center; /* Center items horizontally */
@@ -458,7 +458,7 @@ img {
   margin-bottom: var(--mb-1);
 }
 .class_education {
-  box-shadow: 3px 3px 3px rgba(154, 80, 126, 0.15);
+  box-shadow: 3px 3px 3px  rgb(244 62 123 / 51%);
   border-radius: 5rem;
   padding-left: 100px;
   padding-bottom: 20px;
@@ -791,7 +791,7 @@ img {
     align-items: center;
     margin-bottom: 5rem;
     /* gap: 100rem; */
-    max-width: 800px;
+    max-width: 1200px;
     column-gap: 2rem;
 
 } 
@@ -827,7 +827,8 @@ img {
 
 .date {
   font-style: italic;
-  color: var(--second-color);
+  /* color: var(--second-color); */
+  color: hsl(var(--hue-color), 56%, 30%)
 }
 
 

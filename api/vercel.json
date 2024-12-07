@@ -32,6 +32,10 @@
       {
         "source": "/send-email",
         "destination": "/index.html/send-email"
+      },
+      {
+        "source": "/",
+        "destination": "/thankyou.html"
       }
     ]
   }
