@@ -48,6 +48,7 @@ body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   color: var(--second-color);
+  /* background-color: black; */
 }
 
 h1, h2, p {
@@ -55,11 +56,12 @@ h1, h2, p {
 }
 
 ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: disc;
+    margin: 0;
+    padding: 0;
+    list-style-type: disc;
+    padding-left: 2 rem;
 }
-
+ 
 a {
   text-decoration: none;
 }
@@ -76,7 +78,7 @@ img {
   width: min-content;
 }
 /*===== CLASS CSS ===== */
-.section-title {
+/* .section-title {
   position: relative;
   font-size: var(--h2-font-size);
   color: var(--first-color);
@@ -94,6 +96,58 @@ img {
   margin: auto;
   top: 2rem;
   background-color: var(--first-color);
+} */
+.section-title {
+   
+   
+   
+   
+  position: relative;
+  font-size: var(--h2-font-size);
+  color: var(--first-color);
+  margin-top: var(--mb-2);
+  margin-bottom: var(--mb-4);
+  text-align: center;
+  /* opacity: 0; Initially hidden */
+  /* transform: translateX(10%); Start from right */
+  animation: underline 1s 0.5s forwards; /* Two animations */
+}
+
+/* Animation for sliding the text from right to left */
+/* @keyframes slideIn {
+  0% {
+    transform: translateX(25%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+} */
+
+/* Animation for the underline appearing */
+@keyframes underline {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Style for the underline */
+.section-title::after {
+  content: "";
+  position: absolute;
+   
+  width: 64px;
+  height: 0.18rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 2rem;
+  background-color: var(--first-color);
+  transition: width 0.5s ease-out;
 }
 
 .section {
@@ -126,6 +180,26 @@ img {
   justify-content: space-between;
   align-items: center;
   font-weight: var(--font-semi);
+}
+.project_container {
+  gap: 20px;
+  display: flex;
+  padding: 10px;
+}
+.class_education {
+  box-shadow: 3px 3px 3px rgba(154, 80, 126, 0.15);
+  border-radius: 5rem;
+  padding-left: 100px;
+  padding-bottom: 20px;
+  border-color: pink;
+  /* margin-left: 10px; */
+}
+.project_pic {
+  display: flex;
+}
+.project_pic1 {
+  display: flex;
+  flex-direction: row-reverse;
 }
 @media screen and (max-width: 767px) {
   .nav__menu {
@@ -196,6 +270,10 @@ img {
   font-size: var(--big-font-size);
   margin-bottom: var(--mb-5);
 }
+.home__title_detail {
+  font-size: var(--h2-font-size);
+  margin-bottom: var(--mb-5);
+}
 .home__title-color {
   color: var(--first-color);
 }
@@ -227,14 +305,20 @@ img {
 
 /*BUTTONS*/
 .button {
-  display: inline-block;
-  text-align: center;
-  background-color: var(--first-color);
-  color: #fff;
-  padding: 0.75rem 2.5rem;
-  font-weight: var(--font-semi);
-  border-radius: 0.5rem;
-  transition: 0.3s;
+  display: inline-flex;
+    gap: 500px;
+    text-align: center;
+    background-color: var(--first-color);
+    color: #fff;
+    padding-left: 3rem;
+    padding: 0.85rem 0.95rem;
+    font-weight: var(--font-semi);
+    border-radius: 0.5rem;
+    transition: 0.3s;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
 }
 .button:hover {
   box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
@@ -373,7 +457,31 @@ img {
   color: #666;
   margin-bottom: var(--mb-1);
 }
-
+.class_education {
+  box-shadow: 3px 3px 3px rgba(154, 80, 126, 0.15);
+  border-radius: 5rem;
+  padding-left: 100px;
+  padding-bottom: 20px;
+  border-color: pink;
+  /* margin-left: 10px; */
+}
+/* project */
+.project_container {
+    gap: 80px;
+    padding: 80px;
+    display: inline-flex;
+     
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: center;
+    margin-left: 30px;
+}
+.project_pic {
+  display: contents;
+}
+.project_des {
+  padding-left: 20px;
+}
 /* ===== WORK =====*/
 .work__container {
   row-gap: 2rem;
@@ -383,10 +491,10 @@ img {
   max-width: 800px; /* Limit width if needed */
 }
 .work__img {
-  box-shadow: 1px 1px 1px rgba(154, 80, 126, 0.15);
-  border-radius: 1rem;
-  overflow: hidden;
-  align-items: center; /* Center items horizontally */
+   
+    border-radius: 1rem;
+    /* overflow: hidden; */
+    padding: 2rem; /* Center items horizontally */
   /* margin-left: 10px; */
   /* padding-left: 100px; */
 }
@@ -396,6 +504,7 @@ img {
 .work__img img:hover {
   transform: scale(1.1);
 }
+
 
 /* ===== CONTACT =====*/
 .contact__input {
@@ -449,8 +558,26 @@ img {
   .home__img {
     width: 200px;
   }
+  .project_pic {
+    display: flex;
+    padding: 30px;
+  }
+  .project_pic1 {
+    display: flex;
+    padding: 30px;
+    flex-direction: row-reverse;
+  }
 }
 @media screen and (min-width: 576px) {
+  .project_pic {
+    /* display: flex; */
+    padding: 30px;
+  }
+  .project_pic1 {
+    display: contents;
+    padding: 30px;
+    /* flex-direction: row-reverse; */
+  }
   .home {
     padding: 4rem 0 2rem;
   }
@@ -494,17 +621,66 @@ img {
   }
   .col {
     display:flex; /* Changes the display to block for smaller screens */
-    width: 50%; /* Ensures each column takes full width */
+    /* width: 50%; Ensures each column takes full width */
    margin-bottom: 5px; /* Adds some space between blocks  */
-  
+  gap: 0.5rem;
   }
   .contact__container {
     justify-items: center;
   }
+   
 }
 @media screen and (min-width: 768px) {
   body {
     margin: 0;
+    /* background-color: black; */
+  }
+  section#about {
+    margin-top: 2rem;
+}
+  .image-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* The image itself */
+  .image-container img {
+    width: 500px; /* Set your desired image size */
+    height: auto;
+    border-radius: 8px;
+    /* padding: 50px 20px 20px 20px; */
+     
+  }
+
+  /* Text that appears on hover */
+  .image-container .hover-text {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(0, 0,0, 0.5);
+    color: white;
+    padding: 60px 110px 60px 110px;
+    border-radius: 5px;
+    display: none; /* Hide text by default */
+  }
+
+  /* Show text when hovering over the image */
+  .image-container:hover .hover-text {
+    display: block;
+  }
+
+
+
+
+  .project_pic {
+    /* display: flex; */
+    padding: 30px;
+  }
+  .project_pic1 {
+    display: contents;
+    padding: 30px;
+    /* flex-direction: row-reverse; */
   }
   .section {
     padding-top: 4rem;
@@ -523,11 +699,14 @@ img {
   .nav__list {
     display: flex;
     padding-top: 0;
-  }
-  .nav__item {
     margin-left: var(--mb-6);
     margin-bottom: 0;
+    gap: 2rem;
   }
+  /* .nav__item {
+    margin-left: var(--mb-6);
+    margin-bottom: 0;
+  } */
   .nav__toggle {
     display: none;
   }
@@ -575,8 +754,19 @@ img {
     margin-left: auto;
     margin-right: auto;
   }
+  .project_pic {
+    display: flex;
+    padding: 30px;
+  }
+  .project_pic1 {
+    display: flex;
+    padding: 30px;
+    flex-direction: row-reverse;
+  }
   .home {
+     
     padding: 10rem 0 2rem;
+         
   }
   .home__img {
     width: 450px;
@@ -591,18 +781,18 @@ img {
 /*===== WORK =====*/
  
 .work1__container, .work2__container {
-  padding: var(--mb-5);  
-  background: #fff;
-  border-radius: 2rem;
-  box-shadow: 0 4px 15px rgba(14, 36, 49, 0.15); /* Slightly lighter shadow */
-  max-width: 100%; /* Ensure containers don’t exceed available width */
-  margin:  0 auto; /* Center containers */
-  display: flex;
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center items horizontally */
-  gap: 10rem; /* Space between items */
-  max-width: 800px; /* Limit width if needed */
-  column-gap: 2rem;
+  padding: var(--mb-5);
+    border-radius: 2rem;
+    box-shadow: 1rem 1rem 1rem rgb(244 62 123 / 51%);
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
+    /* gap: 100rem; */
+    max-width: 800px;
+    column-gap: 2rem;
 
 } 
 
@@ -648,6 +838,7 @@ img {
   font-family: Arial, sans-serif;
   line-height: 2;
   color: #333;
+
    
 }
   .thanks-container {
