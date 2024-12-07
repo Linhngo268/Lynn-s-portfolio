@@ -1,28 +1,4 @@
-// {
-//     "rewrites": [
-//         { 
-//         "source": "/(.*)", 
-//     "destination": "/public/index.html" },
-//     {
-//         "source": "/send-email",
-//         "destination": "/"
-//     }
-// ]
-// }
-   
-// {
-//     "routes": [
-//         { 
-//         "source": "/", 
-//     "destination": "/" 
-// },
-//     {
-//         "source": "/send-email",
-//         "destination": "/"
-//     }
-// ]
-// }
-   
+ 
 {
     "routes": [
       { 

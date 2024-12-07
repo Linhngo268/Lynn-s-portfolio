@@ -1,0 +1,70 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;  /* Ensure full screen height */
+    display: flex;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;  /* Center vertically */
+    background-image: url('/pics/pink1.png');  /* Light background */
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    background-position: center;
+    animation: 3s linear 1s slide-in;
+  }
+  @keyframes moveBackground {
+    0% {
+      background-position: center top;
+    }
+    100% {
+      background-position: center bottom;  /* Moves to the bottom */
+    }
+  }
+  #hi {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .thanks-container {
+    text-align: center;
+    padding: 100px;
+    /* background-color: #f8f3f3fb; */
+    /* border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    max-width: 80%;  /* Limit max width */
+    
+    width: 100%;
+    height: auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the content vertically */
+  }
+
+  .content {
+    font-size: large;
+    font-size: 40px;
+    line-height: 50px;
+    margin-bottom: 30px;
+    color: #6b3438;
+  }
+
+  .signature {
+    font-size: 30px;
+    font-style: italic;
+    margin-top: 20px;
+    color: #6b3438;
+  }
+
+  .back-p {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #000;
+  }
