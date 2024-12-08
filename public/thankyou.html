@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles-thankyou.css">
+    <link rel="stylesheet" href="/css/styles.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
     <title>Thank You</title>
@@ -13,8 +15,48 @@
          
     </style>
 </head>
+
 <body class="hi" id="hi">
-    <div>
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div>
+                <a href="index.html" class="nav__logo">Lynn</a>
+            </div>
+
+
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                     <a href="index.html#home" class="nav__link active-link">Home</a> <br>
+                     <a href="index.html#about" class="nav__link">About</a> <br>
+                     <a href="index.html#skills" class="nav__link">Skills</a> <br>
+                     <a href="index.html#education" class="nav__link">Education</a> 
+                     <a href="index.html#project" class="nav__link">Projects</a> 
+                     <a href="index.html#work" class="nav__link">Experiences</a>
+                     <a href="index.html#contact" class="nav__link">Contact</a> 
+                     <div class="color-picker-container">
+                        <button class="color-button"> colour</button>
+          <div class="color-options">
+            <button class="color-option" data-color="red" style="background-color: red;"></button>
+            <button class="color-option" data-color="blue" style="background-color: blue;"></button>
+            <button class="color-option" data-color="green" style="background-color: green;"></button>
+            <button class="color-option" data-color="yellow" style="background-color: yellow;"></button>
+            <button class="color-option" data-color="pink" style="background-color: pink"></button>
+            <button class="color-option" data-color="purple" style="background-color: purple;"></button>
+        
+        
+          </div>
+          </div>
+                </ul>
+                
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+    <div class="main_1">
         <button class="back-p" id="back" onclick="location.href='index.html';">
             <i class="fa fa-times" aria-hidden="true"></i>
         </button>

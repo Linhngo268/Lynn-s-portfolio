@@ -31,8 +31,21 @@
                          <a href="#project" class="nav__link">Projects</a> 
                          <a href="#work" class="nav__link">Experiences</a>
                          <a href="#contact" class="nav__link">Contact</a> 
-
+                         <div class="color-picker-container">
+                            <button class="color-button"> colour</button>
+              <div class="color-options">
+                <button class="color-option" data-color="red" style="background-color: red;"></button>
+                <button class="color-option" data-color="blue" style="background-color: blue;"></button>
+                <button class="color-option" data-color="green" style="background-color: green;"></button>
+                <button class="color-option" data-color="yellow" style="background-color: yellow;"></button>
+                <button class="color-option" data-color="pink" style="background-color: pink"></button>
+                <button class="color-option" data-color="purple" style="background-color: purple;"></button>
+            
+            
+              </div>
+              </div>
                     </ul>
+                    
                 </div>
 
                 <div class="nav__toggle" id="nav-toggle">
@@ -51,7 +64,7 @@
                     <a id="nav-menu" href="#contact" class="button">Contact</a>
                     <a href="/resume/RESUME-LYNNNGO.docx" download="RESUME-LYNNNGO.docx" class="button">Download Resume</a>
                 <!-- <a class="button" onclick="toggleBackgroundColor()">Change Background</a> -->
-                <a href="thankyou.html" class="button">Go to New Page </a>
+                
 
 
                 </div>
@@ -510,63 +523,75 @@
             console.error('Error loading thank you template:', error);
         });
 });
+// Select the button, color options, and color picker container
+const colorButton = document.querySelector('.color-button');
+const colorOptions = document.querySelector('.color-options');
+const colorPickerContainer = document.querySelector('.color-picker-container');
+
+// Toggle the dropdown visibility
+colorButton.addEventListener('click', () => {
+  colorPickerContainer.classList.toggle('show');
+});
+
+// Update CSS variables on color selection
+const colorOptionButtons = document.querySelectorAll('.color-option');
+colorOptionButtons.forEach((option) => {
+  option.addEventListener('click', () => {
+    const selectedColor = option.getAttribute('data-color');
+    
+    // Set the hue value based on selected color (you can adjust these values to your preference)
+    let hue;
+    switch (selectedColor) {
+      case 'red':
+        hue = 0; // Red
+        break;
+      case 'blue':
+        hue = 200; // Blue
+        break;
+      case 'green':
+        hue = 120; // Green
+        break;
+      case 'yellow':
+        hue = 60; // Yellow
+        break;
+        case 'pink':
+        hue = 342; // Pink
+        break;
+        case 'purple':
+        hue = 276; // Purple
+        break;
+      default:
+        hue = 0; // Default to red
+    }
+
+    // Update the CSS variables for first and second colors based on hue
+    document.documentElement.style.setProperty('--hue-color', hue);
+
+    // Optionally change button text or styling as needed
+    colorButton.style.backgroundColor = `hsl(${hue}, 89%, 60%)`;
+    colorButton.style.color = `hsl(${hue}, 56%, 12%)`;
+
+    // Close the dropdown after selection
+    colorPickerContainer.classList.remove('show');
+  });
+});
+
+// Close dropdown if clicked outside
+document.addEventListener('click', (event) => {
+  if (!colorPickerContainer.contains(event.target)) {
+    colorPickerContainer.classList.remove('show');
+  }
+});
 
 
-// function toggleBackgroundColor() {
-//   if (isBlack) {
-//     document.body.style.backgroundColor = 'white';
-//     document.body.style.color= 'black';
-     
 
-//   } else {
-//     document.body.style.backgroundColor = 'black';
-//     document.body.style.color= 'pink';
+ 
      
      
     
 
 
-//   }
-//   isBlack = !isBlack;
-// }
-// <h1 class="home__title">Hi,<br>I'am <span class="home__title-color">Lynn Ngo</span><br> Software developer </h1>
-
-
-// const sentence = "Hi, My name is Lynn ";
-//     const sentenceArray = sentence.split(" "); // Split the sentence into words
-//     const sentenceContainer = document.getElementById('sentence');
-
-//     let currentWordIndex = 0;
-
-//     function showNextWord() {
-//       if (currentWordIndex < sentenceArray.length) {
-//         sentenceContainer.innerHTML += sentenceArray[currentWordIndex] + " "; // Add the next word
-//         currentWordIndex++;
-//         setTimeout(showNextWord, 300); // Delay of 500ms before showing the next word
-//       }
-       
-//     }
-
-//     // Start the process
-//     showNextWord();
-    
-
-//     const sentence1 = "I am a Software Developer";
-//     const sentenceArray1 = sentence1.split(" "); // Split the sentence into words
-//     const sentenceContainer1 = document.getElementById('sentence1');
-
-//     let currentWordIndex1 = 0;
-
-//     function showNextWord1() {
-//       if (currentWordIndex1 < sentenceArray1.length) {
-//         sentenceContainer1.innerHTML += sentenceArray1[currentWordIndex1] + " "; // Add the next word
-//         currentWordIndex1++;
-//         setTimeout(showNextWord1, 300); // Delay of 500ms before showing the next word
-//       }
-//     }
-
-//     // Start the process
-//     showNextWord1();
+ 
    
     </script>
  
