@@ -9,7 +9,7 @@
   /* HSL color mode */
   --hue-color: 340;
   --first-color: hsl(var(--hue-color), 89%, 60%);
-  --second-color: hsl(var(--hue-color), 56%, 12%);
+  /* --second-color: hsl(var(--hue-color), 56%, 12%); */
   /*===== Fuente y tipografia =====*/
   --body-font: "Poppins", sans-serif;
   --big-font-size: 2rem;
@@ -321,11 +321,10 @@ img {
   width: 260px;
 }
 .home__blob {
-  fill: var(--first-color);
-}
+  fill: black}
+
 .home__blob-img {
-  width: 360px;
-}
+  width: 400px;}
 
 /*BUTTONS*/
 .button {
